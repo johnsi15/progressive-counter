@@ -2,7 +2,7 @@
   "name": "progressive-counter",
   "version": "0.1.0",
   "license": "MIT",
-  "author": "John Serrano",
+  "author": "John Serrano <me@johnserrano.co>",
   "main": "dist/index.js",
   "module": "dist/progressive-counter.esm.js",
   "typings": "dist/index.d.ts",
@@ -48,5 +48,19 @@
       "path": "dist/progressive-counter.esm.js",
       "limit": "10 KB"
     }
-  ]
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^11.0.2",
+    "@tsconfig/recommended": "^1.0.3",
+    "@tsconfig/vite-react": "^3.0.0",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "dts-cli": "^2.0.4",
+    "husky": "^9.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "size-limit": "^11.0.2",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
+  }
 }

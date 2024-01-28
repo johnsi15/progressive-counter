@@ -13,7 +13,7 @@ DTS scaffolds your new library inside `/src`, and also sets up a [Vite-based](ht
 The recommended workflow is to run DTS in one terminal:
 
 ```bash
-npm start # or yarn start
+npm start # or npm start
 ```
 
 This builds to `/dist` and runs the project in watch mode so any edits you save inside `src` causes a rebuild to `/dist`.
@@ -22,15 +22,15 @@ Then run the example inside another:
 
 ```bash
 cd example
-npm i # or yarn to install dependencies
-npm start # or yarn start
+npm i # or npm to install dependencies
+npm start # or npm start
 ```
 
 The default example imports and live reloads whatever is in `/dist`, so if you are seeing an out of date component, make sure DTS is running in watch mode like we recommend above. 
 
-To do a one-off build, use `npm run build` or `yarn build`.
+To do a one-off build, use `npm run build` or `npm build`.
 
-To run tests, use `npm test` or `yarn test`.
+To run tests, use `npm test` or `npm test`.
 
 ## Configuration
 
@@ -38,7 +38,7 @@ Code quality is set up for you with `prettier`, `husky`, and `lint-staged`. Adju
 
 ### Jest
 
-Jest tests are set up to run with `npm test` or `yarn test`.
+Jest tests are set up to run with `npm test` or `npm test`.
 
 ### Bundle analysis
 
@@ -121,7 +121,7 @@ Alternatively, if you already have a git repo connected, you can set up continuo
 
 ```bash
 netlify init
-# build command: yarn build && cd example && yarn && yarn build
+# build command: npm build && cd example && npm && npm build
 # directory to deploy: example/dist
 # pick yes for netlify.toml
 ```
