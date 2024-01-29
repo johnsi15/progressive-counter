@@ -10,6 +10,7 @@ interface Props {
   decimals?: number;
   delay?: number;
   className?: string;
+  element?: string;
 }
 
 export function ProgressiveCounter({
@@ -19,6 +20,7 @@ export function ProgressiveCounter({
   duration,
   delay,
   className,
+  element = 'div',
 }: Props) {
   const [count, setCount] = useProgressiveCounter(
     initialValue,
@@ -31,5 +33,5 @@ export function ProgressiveCounter({
     setCount(finalValue);
   }, [finalValue, setCount]);
 
-  return <div className={className}>{count}</div>;
+  return React.createElement(element, { className }, count);
 }

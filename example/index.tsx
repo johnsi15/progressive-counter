@@ -11,7 +11,26 @@ const App = () => {
       <ProgressiveCounter
         initialValue={0}
         finalValue={69.000}
+        decimals={3}
+        className="number"
+        element='h1'
+      />
+      {/* prettier-ignore */}
+      <ProgressiveCounter
+        initialValue={0}
+        finalValue={109.000}
         decimals={2}
+        className="number"
+      />
+      <ProgressiveCounter
+        initialValue={0}
+        finalValue={109.0}
+        decimals={1}
+        className="number"
+      />
+      <ProgressiveCounter
+        initialValue={0}
+        finalValue={109}
         className="number"
       />
     </>
