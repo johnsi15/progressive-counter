@@ -6,7 +6,7 @@ export const useProgressiveCounter = (
   duration = 1500,
   decimals = 0,
   delay = 5
-): [number, (value: number | ((prevTarget: number) => number)) => void] => {
+): [string, (value: number | ((prevTarget: number) => number)) => void] => {
   const [target, setTarget] = useState(initialValue);
   const [current, setCurrent] = useState(initialValue);
   const [steps, setSteps] = useState(1);
@@ -32,6 +32,7 @@ export const useProgressiveCounter = (
     const timeout = setTimeout(() => {
       const progress = currentStep / steps;
       if (progress === 1) {
+        console.log('paso por acá');
         setCurrent(target);
       } else {
         setCurrent(lerp(initial, target, easeOutCubic(progress)));
@@ -42,7 +43,9 @@ export const useProgressiveCounter = (
     return () => clearTimeout(timeout);
   }, [delay, currentStep, target, initial, steps]);
 
-  const value = Number(current.toFixed(decimals));
+  const value = current.toFixed(decimals);
+
+  console.log({ value, decimals, current });
 
   return [value, setValue];
 };

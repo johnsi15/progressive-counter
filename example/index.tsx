@@ -1,13 +1,20 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import { hydrateRoot } from 'react-dom/client';
+import './style.css';
 import { ProgressiveCounter } from '../.';
 
 const App = () => {
   return (
-    <div>
-      <ProgressiveCounter valueInitial={0} valueEnd={900} />
-    </div>
+    <>
+      {/* prettier-ignore */}
+      <ProgressiveCounter
+        initialValue={0}
+        finalValue={69.000}
+        decimals={2}
+        className="number"
+      />
+    </>
   );
 };
 

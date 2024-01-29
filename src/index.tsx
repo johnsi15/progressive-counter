@@ -9,14 +9,27 @@ interface Props {
   duration?: number;
   decimals?: number;
   delay?: number;
+  className?: string;
 }
 
-export function ProgressiveCounter({ initialValue, finalValue }: Props) {
-  const [count, setCount] = useProgressiveCounter(initialValue);
+export function ProgressiveCounter({
+  initialValue,
+  finalValue,
+  decimals,
+  duration,
+  delay,
+  className,
+}: Props) {
+  const [count, setCount] = useProgressiveCounter(
+    initialValue,
+    duration,
+    decimals,
+    delay
+  );
 
   useEffect(() => {
     setCount(finalValue);
   }, [finalValue, setCount]);
 
-  return <div>{count}</div>;
+  return <div className={className}>{count}</div>;
 }
