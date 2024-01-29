@@ -5,6 +5,16 @@ import './style.css';
 import { ProgressiveCounter } from '../.';
 
 const App = () => {
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
+
   return (
     <>
       {/* prettier-ignore */}
