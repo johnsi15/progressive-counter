@@ -1,11 +1,13 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { Thing } from '../src/index';
+import { createRoot } from 'react-dom/client';
+import { ProgressiveCounter } from '../src/index';
 
-describe('Thing', () => {
+describe('Progressive Counter', () => {
   it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Thing />, div);
-    ReactDOM.unmountComponentAtNode(div);
+    const container = document.createElement('div');
+    console.log(React);
+    const root = createRoot(container!);
+    root.render(<ProgressiveCounter initialValue={0} finalValue={299.89} />);
+    root.unmount();
   });
 });
