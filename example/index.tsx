@@ -1,14 +1,16 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { Thing } from '../.';
+import { hydrateRoot } from 'react-dom/client';
+import { ProgressiveCounter } from '../.';
 
 const App = () => {
   return (
     <div>
-      <Thing />
+      <ProgressiveCounter valueInitial={0} valueEnd={900} />
     </div>
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const container = document.getElementById('root')!;
+
+hydrateRoot(container, <App />);
