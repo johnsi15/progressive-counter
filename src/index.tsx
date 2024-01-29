@@ -4,16 +4,19 @@ import { useEffect } from 'react';
 import { useProgressiveCounter } from './hooks/useProgressiveCounter';
 
 interface Props {
-  valueInitial: number;
-  valueEnd: number;
+  initialValue: number | (() => number);
+  finalValue: number;
+  duration?: number;
+  decimals?: number;
+  delay?: number;
 }
 
-export function ProgressiveCounter({ valueInitial, valueEnd }: Props) {
-  const [count, setCount] = useProgressiveCounter(valueInitial);
+export function ProgressiveCounter({ initialValue, finalValue }: Props) {
+  const [count, setCount] = useProgressiveCounter(initialValue);
 
   useEffect(() => {
-    setCount(valueEnd);
-  }, [valueEnd, setCount]);
+    setCount(finalValue);
+  }, [finalValue, setCount]);
 
   return <div>{count}</div>;
 }
