@@ -1,19 +1,19 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
-import { hydrateRoot } from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import './style.css';
 import { ProgressiveCounter } from '../.';
 
 const App = () => {
-  const [isMounted, setIsMounted] = React.useState(false);
+  // const [isMounted, setIsMounted] = React.useState(false);
 
-  React.useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  // React.useEffect(() => {
+  //   setIsMounted(true);
+  // }, []);
 
-  if (!isMounted) {
-    return null;
-  }
+  // if (!isMounted) {
+  //   return null;
+  // }
 
   return (
     <>
@@ -47,6 +47,7 @@ const App = () => {
   );
 };
 
-const container = document.getElementById('root')!;
+const container = document.getElementById('root');
 
-hydrateRoot(container, <App />);
+const root = createRoot(container!);
+root.render(<App />);

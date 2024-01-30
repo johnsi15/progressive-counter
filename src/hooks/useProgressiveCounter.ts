@@ -1,12 +1,12 @@
-// import * as React from 'react';
 import { useState, useCallback, useEffect } from 'react';
 
 export const useProgressiveCounter = (
   initialValue: number | (() => number),
   duration = 1500,
   decimals = 0,
-  delay = 5
-): [string, (value: number | ((prevTarget: number) => number)) => void] => {
+  delay = 5,
+  finalValue: number
+): [string] => {
   const [target, setTarget] = useState(initialValue);
   const [current, setCurrent] = useState(initialValue);
   const [steps, setSteps] = useState(1);
@@ -16,8 +16,8 @@ export const useProgressiveCounter = (
     typeof initialValue === 'function' ? initialValue() : initialValue;
 
   const setValue = useCallback(
-    (value: number | ((prevTarget: number) => number)) => {
-      const nextTarget = typeof value === 'function' ? value(target) : value;
+    (value: number) => {
+      const nextTarget = value;
       const steps = Math.max(Math.floor(duration / delay), 1);
 
       setSteps(steps);
@@ -25,7 +25,7 @@ export const useProgressiveCounter = (
       setCurrentStep(1);
       setCurrent(lerp(initial, nextTarget, easeOutCubic(1 / steps)));
     },
-    [delay, duration, target, initial]
+    [delay, duration, initial]
   );
 
   useEffect(() => {
@@ -42,9 +42,13 @@ export const useProgressiveCounter = (
     return () => clearTimeout(timeout);
   }, [delay, currentStep, target, initial, steps]);
 
+  useEffect(() => {
+    setValue(finalValue);
+  }, [finalValue, setValue]);
+
   const value = current.toFixed(decimals);
 
-  return [value, setValue];
+  return [value];
 };
 
 const lerp = (a: number, b: number, alpha: number): number => {
