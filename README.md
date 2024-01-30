@@ -3,6 +3,9 @@ Design and customize progressive counters in your web applications using the Pro
 
 With ProgressiveCounter, you can control the visual style of your counter by passing style classes to perfectly adapt it to your application's design. Simplify the creation of interactive and engaging experiences for your users with this versatile and easy-to-use counter component.
 
+![image](https://github.com/johnsi15/progressive-counter/assets/2974447/84ff414e-9c0f-4274-88da-185cdc79c0a8)
+
+
 ## General information
 
 * **Customizable values:** The component allows users to pass both the initial and final values of the counter, providing them with flexibility to tailor it to their specific needs.
