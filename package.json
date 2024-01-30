@@ -64,5 +64,12 @@
     "size-limit": "^11.0.2",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3"
-  }
+  },
+  "Keywords": [
+    "react.js",
+    "progressive",
+    "counter",
+    "JavaScript",
+    "progressive-counter"
+  ]
 }
