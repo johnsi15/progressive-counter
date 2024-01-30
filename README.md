@@ -18,10 +18,13 @@ With ProgressiveCounter, you can control the visual style of your counter by pas
 
 
 ## Technologies used
-* JavaScript
-* React.js
-* TypeScript
-* Jest
+✅ JavaScript
+
+✅ React.js
+
+✅ TypeScript
+
+✅ Jest
 
 ## Features
 
@@ -32,6 +35,10 @@ With ProgressiveCounter, you can control the visual style of your counter by pas
 * Browser compatibility
 * Performance optimization
 * Comprehensive documentation
+
+## Requirements
+
+Please note that this package requires **React version 18 or higher** and **Node.js version 18.x** as a minimum requirement for compatibility.
 
 ## Setup
 

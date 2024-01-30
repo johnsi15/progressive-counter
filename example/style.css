@@ -4,3 +4,10 @@
   color: aqua;
   text-align: center;
 }
+
+body {
+  background-color: #000000;
+  display: grid;
+  justify-content: center;
+  min-height: 100dvh;
+}
