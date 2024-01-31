@@ -1,8 +1,9 @@
 {
   "name": "progressive-counter",
   "version": "0.2.0",
+  "description": "Progressive counter number with initial value and final value",
   "license": "MIT",
-  "author": "John Serrano <me@johnserrano.co>",
+  "author": "John Serrano <me@johnserrano.co> (https://johnserrano.co/)",
   "main": "dist/index.js",
   "module": "dist/progressive-counter.esm.js",
   "typings": "dist/index.d.ts",
@@ -71,5 +72,14 @@
     "counter",
     "JavaScript",
     "progressive-counter"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/johnsi15/progressive-counter/issues",
+    "email": "me@johnserrano.co"
+  },
+  "funding": "https://www.buymeacoffee.com/jandrey15",
+  "repository": "https://github.com/johnsi15/progressive-counter",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }
