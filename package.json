@@ -1,6 +1,6 @@
 {
   "name": "progressive-counter",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Progressive counter number with initial value and final value",
   "license": "MIT",
   "author": "John Serrano <me@johnserrano.co> (https://johnserrano.co/)",
@@ -78,8 +78,8 @@
     "email": "me@johnserrano.co"
   },
   "funding": "https://www.buymeacoffee.com/jandrey15",
-  "repository": "https://github.com/johnsi15/progressive-counter",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnsi15/progressive-counter.git"
   }
 }
