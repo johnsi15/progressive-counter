@@ -9,4 +9,5 @@ module.exports = {
       version: 'detect',
     },
   },
+  ignorePatterns: ['progressiveCounter.min.js'],
 };

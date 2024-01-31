@@ -5,6 +5,13 @@
   text-align: center;
 }
 
+.counter {
+  font-size: 40px;
+  font-weight: bold;
+  color: rebeccapurple;
+  text-align: center;
+}
+
 body {
   background-color: #000000;
   display: grid;
