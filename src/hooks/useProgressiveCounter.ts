@@ -9,8 +9,8 @@ export const useProgressiveCounter = (
 ): [string] => {
   const [target, setTarget] = useState(initialValue);
   const [current, setCurrent] = useState(initialValue);
-  const [steps, setSteps] = useState(1);
-  const [currentStep, setCurrentStep] = useState(1);
+  // const [steps, setSteps] = useState(1);
+  // const [currentStep, setCurrentStep] = useState(1);
 
   const initial =
     typeof initialValue === 'function' ? initialValue() : initialValue;
@@ -20,27 +20,41 @@ export const useProgressiveCounter = (
       const nextTarget = value;
       const steps = Math.max(Math.floor(duration / delay), 1);
 
-      setSteps(steps);
+      // setSteps(steps);
       setTarget(nextTarget);
-      setCurrentStep(1);
+      // setCurrentStep(1);
       setCurrent(lerp(initial, nextTarget, easeOutCubic(1 / steps)));
     },
     [delay, duration, initial]
   );
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      const progress = currentStep / steps;
-      if (progress === 1) {
+    let startTime: number | null = null;
+    let requestId: number;
+
+    const updateCounter = () => {
+      if (startTime === null) {
+        startTime = Date.now() + delay;
+      }
+
+      const elapsed = Date.now() - startTime;
+      const progress = elapsed / duration;
+
+      if (progress >= 1) {
         setCurrent(target);
       } else {
-        setCurrent(lerp(initial, target, easeOutCubic(progress)));
-        setCurrentStep(currentStep + 1);
+        const value = lerp(initial, target, easeOutCubic(progress));
+        setCurrent(value);
+        requestId = requestAnimationFrame(updateCounter);
       }
-    }, delay);
+    };
 
-    return () => clearTimeout(timeout);
-  }, [delay, currentStep, target, initial, steps]);
+    requestId = requestAnimationFrame(updateCounter);
+
+    return () => {
+      cancelAnimationFrame(requestId);
+    };
+  }, [duration, target, initial, delay]);
 
   useEffect(() => {
     setValue(finalValue);

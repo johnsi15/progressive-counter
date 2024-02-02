@@ -7,6 +7,14 @@ interface Props {
   class: string;
 }
 
+const lerp = (a: number, b: number, alpha: number) => {
+  return a + alpha * (b - a);
+};
+
+const easeOutCubic = (value: number) => {
+  return 1 - Math.pow(1 - value, 3);
+};
+
 export function progressiveCounter({
   initialValue,
   duration = 1500,
@@ -22,14 +30,6 @@ export function progressiveCounter({
 
   const initial =
     typeof initialValue === 'function' ? initialValue() : initialValue;
-
-  const lerp = (a: number, b: number, alpha: number) => {
-    return a + alpha * (b - a);
-  };
-
-  const easeOutCubic = (value: number) => {
-    return 1 - Math.pow(1 - value, 3);
-  };
 
   const steps = Math.max(Math.floor(duration / delay), 1);
 
