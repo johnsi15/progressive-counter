@@ -9,8 +9,6 @@ export const useProgressiveCounter = (
 ): [string] => {
   const [target, setTarget] = useState(initialValue);
   const [current, setCurrent] = useState(initialValue);
-  // const [steps, setSteps] = useState(1);
-  // const [currentStep, setCurrentStep] = useState(1);
 
   const initial =
     typeof initialValue === 'function' ? initialValue() : initialValue;
@@ -20,9 +18,7 @@ export const useProgressiveCounter = (
       const nextTarget = value;
       const steps = Math.max(Math.floor(duration / delay), 1);
 
-      // setSteps(steps);
       setTarget(nextTarget);
-      // setCurrentStep(1);
       setCurrent(lerp(initial, nextTarget, easeOutCubic(1 / steps)));
     },
     [delay, duration, initial]

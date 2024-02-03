@@ -21,30 +21,38 @@ export function progressiveCounter({
   decimals = 0,
   delay = 5,
   finalValue,
-  class: myClass,
+  class: myClass = 'counter',
 }: Props) {
   let target = finalValue;
   let current = initialValue;
-  let currentStep = 1;
-  let timeoutId: any;
 
   const initial =
     typeof initialValue === 'function' ? initialValue() : initialValue;
 
+  const nextTarget = finalValue;
   const steps = Math.max(Math.floor(duration / delay), 1);
 
-  const setTimeoutHandler = () => {
-    const progress = currentStep / steps;
+  current = lerp(initial, nextTarget, easeOutCubic(1 / steps));
 
-    if (progress === 1) {
-      current = target;
-      clearTimeout(timeoutId);
-    } else {
-      current = lerp(initial, target, easeOutCubic(progress));
-      currentStep = currentStep + 1;
-      timeoutId = setTimeout(setTimeoutHandler, delay);
+  let startTime: number | null = null;
+  let requestId: number;
+
+  const updateCounter = () => {
+    if (startTime === null) {
+      startTime = Date.now() + delay;
     }
 
+    const elapsed = Date.now() - startTime;
+    const progress = elapsed / duration;
+
+    if (progress >= 1) {
+      current = target;
+      cancelAnimationFrame(requestId);
+    } else {
+      const value = lerp(initial, target, easeOutCubic(progress));
+      current = value;
+      requestId = requestAnimationFrame(updateCounter);
+    }
     const el = document.querySelector<HTMLElement>(`.${myClass}`);
 
     if (el) {
@@ -52,5 +60,5 @@ export function progressiveCounter({
     }
   };
 
-  timeoutId = setTimeout(setTimeoutHandler, delay);
+  requestId = requestAnimationFrame(updateCounter);
 }
