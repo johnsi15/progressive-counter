@@ -1,6 +1,6 @@
 {
   "name": "progressive-counter",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Progressive counter number with initial value and final value",
   "license": "MIT",
   "author": "John Serrano <me@johnserrano.co> (https://johnserrano.co/)",
