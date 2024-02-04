@@ -3,7 +3,8 @@
   "extends": "@tsconfig/vite-react/tsconfig.json",
   "compilerOptions": {
     "allowImportingTsExtensions": false,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "noUnusedLocals": false,
   },
   "include": [
     "src",

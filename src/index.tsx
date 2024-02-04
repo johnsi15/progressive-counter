@@ -30,5 +30,5 @@ export function ProgressiveCounter({
     finalValue
   );
 
-  return React.createElement(element, { className }, count);
+  return React.createElement(element, { className, role: 'counter' }, count);
 }

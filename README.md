@@ -1,3 +1,11 @@
+
+[![CI](https://github.com/johnsi15/progressive-counter/actions/workflows/main.yml/badge.svg)](https://github.com/johnsi15/progressive-counter/actions/workflows/main.yml)
+![GitHub stars](https://img.shields.io/github/stars/johnsi15/progressive-counter)
+![GitHub issues](https://img.shields.io/github/issues/johnsi15/progressive-counter)
+![GitHub forks](https://img.shields.io/github/forks/johnsi15/progressive-counter)
+![NPM Collaborators](https://img.shields.io/npm/collaborators/progressive-counter)
+
+
 # Progressive counter
 Design and customize progressive counters in your web applications using the ProgressiveCounter component in React.js. This flexible component allows you to create numerical counters that increment gradually, adding a dynamic touch to your interfaces.
 

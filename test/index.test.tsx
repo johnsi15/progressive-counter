@@ -1,20 +1,48 @@
 import * as React from 'react';
-import { createRoot } from 'react-dom/client';
-// import { getByText } from '@testing-library/dom';
-// import { act } from '@testing-library/react';
-import '@testing-library/jest-dom';
+import { render, screen, act } from '@testing-library/react';
+// import '@testing-library/jest-dom';
 
 import { ProgressiveCounter } from '../src/index';
 import { progressiveCounter } from '../src/progressiveCounter';
 
 describe('Progressive Counter', () => {
-  it.skip('renders without crashing', () => {
-    const container = document.createElement('div');
-    console.log(React);
-    const root = createRoot(container!);
-    root.render(<ProgressiveCounter initialValue={0} finalValue={299.89} />);
+  it('renders without crashing', () => {
+    jest.useFakeTimers();
 
-    root.unmount();
+    act(() => {
+      render(
+        <ProgressiveCounter initialValue={0} finalValue={299.89} decimals={2} />
+      );
+    });
+
+    act(() => {
+      jest.runAllTimers();
+    });
+
+    expect(screen.getByRole('counter').textContent).toBe('299.89');
+  });
+
+  it('render component with element h2', () => {
+    jest.useFakeTimers();
+
+    act(() => {
+      render(
+        <ProgressiveCounter
+          initialValue={0}
+          finalValue={299.89}
+          element="h2"
+          decimals={2}
+        />
+      );
+    });
+
+    act(() => {
+      jest.runAllTimers();
+    });
+
+    expect(screen.getByRole('counter')).toBeInTheDocument();
+    expect(screen.getByRole('counter').tagName).toBe('H2');
+    expect(screen.getByRole('counter')).toHaveTextContent('299.89');
   });
 
   it('execute the counter with the initial value', () => {

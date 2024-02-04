@@ -1,7 +1,7 @@
 import { renderHook, act } from '@testing-library/react';
 import { useProgressiveCounter } from '../src/hooks/useProgressiveCounter';
 
-describe.skip('Progressive Counter Hook', () => {
+describe('Progressive Counter Hook', () => {
   it('hook get count value progressive counter with 0 decimals', async () => {
     const FINAL_VALUE = 100 // eslint-disable-line
     const { result } = renderHook(() => {
