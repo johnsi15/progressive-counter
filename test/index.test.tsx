@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render, screen, act } from '@testing-library/react';
-// import '@testing-library/jest-dom';
+import '@testing-library/jest-dom';
 
 import { ProgressiveCounter } from '../src/index';
 import { progressiveCounter } from '../src/progressiveCounter';

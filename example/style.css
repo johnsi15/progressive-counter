@@ -1,5 +1,5 @@
 .number {
-  font-size: 40px;
+  font-size: 70px;
   font-weight: bold;
   color: aqua;
   text-align: center;
@@ -16,5 +16,6 @@ body {
   background-color: #000000;
   display: grid;
   justify-content: center;
+  align-items: center;
   min-height: 100dvh;
 }

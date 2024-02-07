@@ -102,7 +102,7 @@ When using the **ProgressiveCounter component**, you need to define the initial 
 
 **Optional Customization:**
 
-The ProgressiveCounter component supports customization through various props. You can customize the appearance and behavior of the counter by passing additional props such as **CSS classes**, animation styles, or other configuration options. 
+The ProgressiveCounter component supports customization through various props. You can customize the appearance and behavior of the counter by passing additional props such as **CSS classes**, and other configuration options.
 
 **Interacting with the Counter:**
 
@@ -150,15 +150,7 @@ This project is licensed under the MIT License. For more details, see the [LICEN
 
 ## Contact
 
-<a href="https://www.linkedin.com/in/jandreys15" aria-label="Linkedin" target="_blank" style="text-decoration: none;">
-<img src="https://github.com/johnsi15/progressive-counter/assets/2974447/5a80c7ba-8031-46e1-b0f4-1d9d33709db1" width="30" height="30" />
-</a><a href="https://github.com/johnsi15" aria-label="GitHub" target="_blank" style="text-decoration: none;">
-<img src="https://github.com/johnsi15/progressive-counter/assets/2974447/fa304dd0-f61d-4f40-b9a0-012896d1e4f6" width="25" height="25" />
-</a>
-<a href="https://www.facebook.com/johnserranodev" aria-label="Facebook" target="_blank" style="text-decoration: none;">
-<img src="https://github.com/johnsi15/progressive-counter/assets/2974447/c855e722-1372-48e1-b05d-0435d4e99d82" width="25" height="25" />
-</a>
-<a href="https://www.youtube.com/channel/UCycvOkhF14veCixjxn1em4A" aria-label="YouTube" target="_blank" style="text-decoration: none;">
-<img src="https://github.com/johnsi15/progressive-counter/assets/2974447/44474f83-bf62-47fc-96e5-c955a64f9ec2" width="25" height="25" />
-</a>
-
+[Linkedin](https://www.linkedin.com/in/jandreys15) - 
+[GitHub](https://github.com/johnsi15) - 
+[Facebook](https://www.facebook.com/johnserranodev) - 
+[YouTube](https://www.youtube.com/channel/UCycvOkhF14veCixjxn1em4A)
